@@ -17,21 +17,7 @@ import {Home} from './home/home';
   providers: [ ...FORM_PROVIDERS ],
   directives: [ ...ROUTER_DIRECTIVES, RouterActive ],
   pipes: [],
-  styles: [`
-    nav ul {
-      display: inline;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 60px;
-    }
-    nav li {
-      display: inline;
-    }
-    nav li.active {
-      background-color: lightgray;
-    }
-  `],
+  styles: [require('./app.scss')],
   templateUrl: './app/app.html'
 })
 @RouteConfig([
@@ -42,9 +28,9 @@ import {Home} from './home/home';
   { path: '/**', redirectTo: ['Index'] }
 ])
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  na_logo = 'assets/img/scheinhorn.png';
+  name = 'Pschu Playground';
+  url = 'http://pschu.com';
   constructor() {
 
   }

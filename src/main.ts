@@ -25,6 +25,9 @@ if ('production' === process.env.ENV) {
  */
 import {App} from './app/app';
 
+//import './app/app.scss';
+
+
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
@@ -33,8 +36,8 @@ export function main() {
   return browser.bootstrap(App, [
     ...ENV_PROVIDERS,
     ...HTTP_PROVIDERS,
-    ...ROUTER_PROVIDERS,
-    ng.provide(LocationStrategy, { useClass: HashLocationStrategy })
+    ...ROUTER_PROVIDERS
+    //,ng.provide(LocationStrategy, { useClass: HashLocationStrategy })
   ])
   .catch(err => console.error(err));
 }

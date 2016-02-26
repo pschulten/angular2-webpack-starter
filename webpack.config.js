@@ -30,6 +30,7 @@ module.exports = {
   devtool: 'source-map',
   debug: true,
   // cache: false,
+  postcss: [autoprefixer],
 
   // our angular app
   entry: { 'polyfills': './src/polyfills.ts', 'main': './src/main.ts' },
@@ -69,7 +70,8 @@ module.exports = {
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw-loader', exclude: [ root('src/index.html') ] },
 
-      { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+      //{ test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+      { test: /.scss$/, loaders: ['raw-loader','sass-loader'] },
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
       // Bootstrap 4
       { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
