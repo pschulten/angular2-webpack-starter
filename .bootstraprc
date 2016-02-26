@@ -33,6 +33,8 @@ extractStyles: false
 #
 # preBootstrapCustomizations: ./path/to/bootstrap/pre-customizations.scss
 
+#preBootstrapCustomizations: ./app/pre-customizations.scss
+
 
 # This gets loaded after bootstrap/variables is loaded
 # Thus, you may customize Bootstrap variables

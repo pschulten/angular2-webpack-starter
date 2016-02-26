@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <header>
-    <nav class="navbar  navbar-inverse">
+    <nav class="navbar navbar-dark bg-inverse">
+
+      <img class="navbar-brand" [src]="na_logo" width="12%">
+
 
       <ul class="nav navbar-nav">
-        <li>
-          <img [src]="na_logo">
-        </li>
         <li router-active class="nav-item active">
           <a [routerLink]=" ['Index'] " class="nav-link">Index <span class="sr-only">(current)</span></a>
         </li>
@@ -16,6 +16,10 @@
           <a [routerLink]=" ['About'] "class="nav-link" href="#">About</a>
         </li>
       </ul>
+      <form class="form-inline pull-xs-right">
+        <input class="form-control" type="text" placeholder="...blubb...">
+        <button class="btn btn-info-outline" type="submit">Play</button>
+      </form>
     </nav>
 
   </header>
