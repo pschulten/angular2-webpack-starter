@@ -17,7 +17,7 @@
         </p>
         <h5 class="card-subtitle text-muted">Two-way-binding with <code ngNonBindable>[(ngModel)]="uni.name"</code></h5>
         <p>
-          <input type="text" [(ngModel)]="uni.name">
+          <input type="text" [(ngModel)]="uni.name" (blur)="myBlur($event, uni)" (focus)="myFocus(uni.color, uni.name)">
         </p>
         <h5 class="card-subtitle text-muted">interpolation with <code ngNonBindable>{{uni.name}}</code> </h5>
         <p>
@@ -30,8 +30,9 @@
   <div class="col-sm-6">
     <div class="card card-block">
       <h3 class="card-title">Special title treatment</h3>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <p class="card-text">
+        <button type="button" class="btn btn-primary" (click)="setCustomUnicorn()">set unicorn</button>
+      </p>
     </div>
   </div>
 
