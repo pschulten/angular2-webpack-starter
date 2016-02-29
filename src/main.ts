@@ -1,7 +1,7 @@
 /*
  * Providers provided by Angular
  */
-import * as ng from 'angular2/core';
+import * as ngCore from 'angular2/core';
 import * as browser from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {HTTP_PROVIDERS} from 'angular2/http';
@@ -13,7 +13,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 const ENV_PROVIDERS = [];
 
 if ('production' === process.env.ENV) {
-  ng.enableProdMode();
+  ngCore.enableProdMode();
   ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS_PROD_MODE);
 } else {
   ENV_PROVIDERS.push(browser.ELEMENT_PROBE_PROVIDERS);
@@ -25,9 +25,6 @@ if ('production' === process.env.ENV) {
  */
 import {App} from './app/app';
 
-//import './app/app.scss';
-
-
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
@@ -36,11 +33,12 @@ export function main() {
   return browser.bootstrap(App, [
     ...ENV_PROVIDERS,
     ...HTTP_PROVIDERS,
-    ...ROUTER_PROVIDERS
-    //,ng.provide(LocationStrategy, { useClass: HashLocationStrategy })
+    ...ROUTER_PROVIDERS,
+    ngCore.provide(LocationStrategy, { useClass: HashLocationStrategy })
   ])
   .catch(err => console.error(err));
 }
+
 
 /*
  * Vendors
@@ -57,19 +55,24 @@ import 'bootstrap-loader';
  * Hot Module Reload
  * experimental version by @gdi2290
  */
+
+function bootstrapDomReady() {
+  // bootstrap after document is ready
+  return document.addEventListener('DOMContentLoaded', main);
+}
+
 if ('development' === process.env.ENV) {
   // activate hot module reload
-  if ('hot' in module) {
+  if (process.env.HMR) {
     if (document.readyState === 'complete') {
       main();
     } else {
-      document.addEventListener('DOMContentLoaded', main);
+      bootstrapDomReady();
     }
     module.hot.accept();
+  } else {
+    bootstrapDomReady();
   }
-
 } else {
-  // bootstrap after document is ready
-  document.addEventListener('DOMContentLoaded', main);
+  bootstrapDomReady();
 }
-
