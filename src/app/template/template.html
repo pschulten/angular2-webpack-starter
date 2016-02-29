@@ -1,0 +1,63 @@
+<h1>Template Syntax</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-subtitle text-muted">One-way-binding with <code ngNonBindable>[value]="uni.name"</code> (rein)</h5>
+        <p>
+          <input type="text" [value]="uni.name">
+        </p>
+        <h5 class="card-subtitle text-muted">One-way-binding with <code ngNonBindable>(input)="uni.name = $event.target.value"</code> (raus)</h5>
+        <p>
+          <input type="text" (input)="uni.name = $event.target.value">
+        </p>
+        <h5 class="card-subtitle text-muted">Two-way-binding with <code ngNonBindable>[value]="uni.name" (input)="uni.name = $event.target.value" </code></h5>
+        <p>
+          <input type="text" [value]="uni.name" (input)="uni.name = $event.target.value" autofocus>
+        </p>
+        <h5 class="card-subtitle text-muted">Two-way-binding with <code ngNonBindable>[(ngModel)]="uni.name"</code></h5>
+        <p>
+          <input type="text" [(ngModel)]="uni.name">
+        </p>
+        <h5 class="card-subtitle text-muted">interpolation with <code ngNonBindable>{{uni.name}}</code> </h5>
+        <p>
+          {{uni.name}}
+        </p>
+        <pre>this.uni= {{ uni | json }}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card card-block">
+      <h3 class="card-title">Special title treatment</h3>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-title">Data binding</h5>
+        <h5 class="card-subtitle text-muted">Support card subtitle</h5>
+      </div>
+      <div class="card-block">
+        <p>
+          <span>Your Content Here</span>
+          <input type="text">
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card card-block">
+      <h3 class="card-title">Special title treatment</h3>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+
+
+

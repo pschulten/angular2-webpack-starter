@@ -6,7 +6,8 @@ import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS} from 'angular2/common';
 
 import {RouterActive} from './directives/router-active';
-import {Home} from './home/home';
+//import {Home} from './home/home';
+import {Template} from "./template/template.component";
 
 /*
  * App Component
@@ -21,11 +22,11 @@ import {Home} from './home/home';
   templateUrl: './app/app.html'
 })
 @RouteConfig([
-  { path: '/', component: Home, name: 'Index' },
-  { path: '/home', component: Home, name: 'Home' },
+  { path: '/', component: Template, name: 'Template' },
+  //{ path: '/home', component: Home, name: 'Home' },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', loader: () => require('es6-promise!./about/about')('About'), name: 'About' },
-  { path: '/**', redirectTo: ['Index'] }
+  { path: '/**', redirectTo: ['Template'] }
 ])
 export class App {
   na_logo = 'assets/img/scheinhorn.png';
