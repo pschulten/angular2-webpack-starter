@@ -1,5 +1,9 @@
 @import "./node_modules/bootstrap/scss/variables";
 
+header {
+  margin-bottom: 10px;
+}
+
 .nav {
   border: 5px solid $gray-dark;
 }
