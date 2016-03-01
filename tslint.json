@@ -9,7 +9,7 @@
     ],
     "max-line-length": [
       true,
-      100
+      150
     ],
     "member-ordering": [
       true,
@@ -35,10 +35,6 @@
       "check-catch",
       "check-else",
       "check-whitespace"
-    ],
-    "quotemark": [
-      true,
-      "single"
     ],
     "semicolon": true,
     "triple-equals": [

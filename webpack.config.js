@@ -73,6 +73,8 @@ module.exports = helpers.validate({
 
       //{ test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
       { test: /.scss$/, loaders: ['raw-loader','sass-loader'] },
+      
+
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
       // Bootstrap 4
       { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
@@ -109,7 +111,7 @@ module.exports = helpers.validate({
   tslint: {
     emitErrors: false,
     failOnHint: false,
-    resourcePath: 'src',
+    resourcePath: 'src'
   },
 
   // our Webpack Development Server config

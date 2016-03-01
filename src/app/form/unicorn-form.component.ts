@@ -23,7 +23,6 @@ export class UnicornFormComponent {
 
   // TODO: Remove this when we're done
   get diagnostic() {
-    this.model.color
     return JSON.stringify(this.model);
   }
 

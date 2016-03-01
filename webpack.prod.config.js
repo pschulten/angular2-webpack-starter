@@ -105,6 +105,9 @@ module.exports = helpers.validate({
         loader: 'raw-loader'
       },
 
+      { test: /.scss$/, loaders: ['raw-loader','sass-loader'] },
+      { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
+
       // support for .html as raw text
       {
         test: /\.html$/,
@@ -148,7 +151,12 @@ module.exports = helpers.validate({
       '__decorate': 'ts-helper/decorate',
       '__awaiter': 'ts-helper/awaiter',
       '__extends': 'ts-helper/extends',
-      '__param': 'ts-helper/param'
+      '__param': 'ts-helper/param',
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery',
+      "Tether": 'tether',
+      "window.Tether": "tether"
     }),
     new UglifyJsPlugin({
       // to debug prod builds uncomment //debug lines and comment //prod lines

@@ -7,8 +7,8 @@ import {FORM_PROVIDERS} from 'angular2/common';
 
 import {RouterActive} from './directives/router-active';
 //import {Home} from './home/home';
-import {Template} from "./template/template.component";
-import {Form} from "./form/form.component";
+import {Template} from './template/template.component';
+import {Form} from './form/form.component';
 
 /*
  * App Component
