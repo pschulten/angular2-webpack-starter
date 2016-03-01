@@ -39,7 +39,7 @@ export class Template {
 
   setCustomUnicorn() {
     console.log("todo set");
-    let test = new AngularUnicorn(0, "Siedenblixer", true);
+    let test = new AngularUnicorn(0, "Siedenblixer", true, 'red');
     this.uni = test;
   };
 

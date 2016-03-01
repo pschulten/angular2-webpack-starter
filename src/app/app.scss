@@ -4,6 +4,10 @@ header {
   margin-bottom: 10px;
 }
 
-.nav {
-  border: 5px solid $gray-dark;
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
 }

@@ -1,13 +1,14 @@
 /*
  * Angular 2 decorators and services
  */
-import {Component} from 'angular2/core';
+import {Component, ViewEncapsulation} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS} from 'angular2/common';
 
 import {RouterActive} from './directives/router-active';
 //import {Home} from './home/home';
 import {Template} from "./template/template.component";
+import {Form} from "./form/form.component";
 
 /*
  * App Component
@@ -19,10 +20,12 @@ import {Template} from "./template/template.component";
   directives: [ ...ROUTER_DIRECTIVES, RouterActive ],
   pipes: [],
   styles: [require('./app.scss')],
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './app/app.html'
 })
 @RouteConfig([
   { path: '/', component: Template, name: 'Template' },
+  { path: '/form', component: Form, name: 'Form' },
   //{ path: '/home', component: Home, name: 'Home' },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', loader: () => require('es6-promise!./about/about')('About'), name: 'About' },

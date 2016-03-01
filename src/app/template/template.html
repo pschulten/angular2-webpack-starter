@@ -5,19 +5,19 @@
       <div class="card-block">
         <h5 class="card-subtitle text-muted">One-way-binding with <code ngNonBindable>[value]="uni.name"</code> (rein)</h5>
         <p>
-          <input type="text" [value]="uni.name">
+          <input type="text" [value]="uni.name" class="form-control">
         </p>
         <h5 class="card-subtitle text-muted">One-way-binding with <code ngNonBindable>(input)="uni.name = $event.target.value"</code> (raus)</h5>
         <p>
-          <input type="text" (input)="uni.name = $event.target.value">
+          <input type="text" class="form-control" (input)="uni.name = $event.target.value">
         </p>
         <h5 class="card-subtitle text-muted">Two-way-binding with <code ngNonBindable>[value]="uni.name" (input)="uni.name = $event.target.value" </code></h5>
         <p>
-          <input type="text" [value]="uni.name" (input)="uni.name = $event.target.value" autofocus>
+          <input type="text" class="form-control" [value]="uni.name" (input)="uni.name = $event.target.value" autofocus>
         </p>
         <h5 class="card-subtitle text-muted">Two-way-binding with <code ngNonBindable>[(ngModel)]="uni.name"</code></h5>
         <p>
-          <input type="text" [(ngModel)]="uni.name" (blur)="myBlur($event, uni)" (focus)="myFocus(uni.color, uni.name)">
+          <input required type="text" class="form-control" [(ngModel)]="uni.name" (blur)="myBlur($event, uni)" (focus)="myFocus(uni.color, uni.name)">
         </p>
         <h5 class="card-subtitle text-muted">interpolation with <code ngNonBindable>{{uni.name}}</code> </h5>
         <p>
