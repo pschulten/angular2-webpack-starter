@@ -21,7 +21,7 @@ import {Form} from './form/form.component';
   pipes: [],
   styles: [require('./app.scss')],
   encapsulation: ViewEncapsulation.None,
-  templateUrl: './app/app.html'
+  template: require('./app.html')
 })
 @RouteConfig([
   { path: '/', component: Template, name: 'Template' },
